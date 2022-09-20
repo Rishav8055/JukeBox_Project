@@ -45,7 +45,7 @@ public class AudioPlayer {
         clip.start();
         long duration = clip.getMicrosecondLength();
         duration = clip.getMicrosecondLength();
-        long finalDuration = (duration / 1000000)*1000;      //converting into microsecond
+        long finalDuration = (duration / 1000000)*1000;
         final Timer t = new Timer(1000, new ActionListener() {
             private long time = finalDuration ;
             public void actionPerformed(ActionEvent e) {

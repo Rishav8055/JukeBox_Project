@@ -27,7 +27,7 @@ public class Main {
             System.out.println("********************************************************************************************************************************************************************");
             System.out.println("***********---JUCKBOX PLAYLIST---***********");
             System.out.println("SEARCH your SONG AND PLAYLIST");
-            System.out.println("\n1.GET ALL SONGS\n2.SEARCH SONG BY NAME\n3.SEARCH SONG BY ARTIST NAME\n4.SEARCH SONG BY GENRE\n5.CREATE YOUR OWN PLAYLIST\n6.SEARCH_PLAYLIST_BY_NAME\n7.SEARCH_PLAYLIST_BY_USER_ID\n8.INSERT SONG \n9.GET_All_SONG_OF_PLAYLIST\n0.EXIT JUCKBOX");
+            System.out.println("\n1.GET ALL SONGS\n2.SEARCH SONG BY NAME\n3.SEARCH SONG BY ARTIST NAME\n4.SEARCH SONG BY GENRE\n5.SEARCH_PLAYLIST_BY_NAME\n6.SEARCH_PLAYLIST_BY_USER_ID\n7.INSERT SONG \n8.GET_All_SONG_OF_PLAYLIST\n0.EXIT JUCKBOX");
             int choice1 = scanner.nextInt();
             scanner.nextLine();
             switch (choice1) {
@@ -68,13 +68,17 @@ public class Main {
                     System.out.println("PRESS 1 TO PLAY SONG");
                     audioPlayer.audioPlaying(DbConnection.getConnection());
                     break;
-                case 5:
+                /*case 5:
                     System.out.println("CREATE YOUR PLAYLIST");
                     System.out.println("ENTER YOUR PLAYLIST NAME");
                     String playListName = scanner.nextLine();
                     playListDao.createNewTable(playListName);
-                    break;
-                case 6:
+                    System.out.println();
+                    System.out.println("==============================================================================================================================================================");
+                    System.out.println("PRESS 1 TO PLAY SONG");
+                    audioPlayer.audioPlaying(DbConnection.getConnection());
+                    break;*/
+                case 5:
                     System.out.println("SEARCH PLAYLIST BY NAME");
                     String playListName1 = scanner.nextLine();
                     playListDao.searchPlayListByName(playListName1);
@@ -83,7 +87,7 @@ public class Main {
                     System.out.println("PRESS 1 TO PLAY SONG");
                     audioPlayer.audioPlaying(DbConnection.getConnection());
                     break;
-                case 7:
+                case 6:
                     System.out.println("SEARCH PLAYLIST BY ID");
                     String playListId = scanner.nextLine();
                     playListDao.searchPlayListById(8055);
@@ -91,10 +95,11 @@ public class Main {
                     System.out.println("PRESS 1 TO PLAY SONG");
                     audioPlayer.audioPlaying(DbConnection.getConnection());
                     break;
-                case 8:
+                case 7:
                     System.out.println("INSERT SONG INTO PLAYLIST");
                     String addSong = scanner.nextLine();
-                    playListDao.insertIntoPlaylist("PLAYLIST_NAME",8055);
+                    playListDao.insertIntoPlaylist("Soft Piano Music_16000_mono.wav",2);
+                    playListDao.showAllPlayList();
                     System.out.println("==============================================================================================================================================================");
                     System.out.println("PRESS 1 TO PLAY SONG");
                     audioPlayer.audioPlaying(DbConnection.getConnection());
